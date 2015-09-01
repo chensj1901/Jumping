@@ -1,0 +1,80 @@
+PODS:
+  - AdsMoGo-iOS-Lib (1.0.0)
+  - CocoaAsyncSocket (7.4.2)
+  - CocoaHTTPServer (2.3):
+    - CocoaAsyncSocket
+    - CocoaLumberjack
+  - CocoaLumberjack (2.0.1):
+    - CocoaLumberjack/Default (= 2.0.1)
+    - CocoaLumberjack/Extensions (= 2.0.1)
+  - CocoaLumberjack/Core (2.0.1)
+  - CocoaLumberjack/Default (2.0.1):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.0.1):
+    - CocoaLumberjack/Default
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - MobShareSDK (3.0):
+    - MobShareSDK/Connection (= 3.0)
+    - MobShareSDK/Core (= 3.0)
+    - MobShareSDK/Extend (= 3.0)
+  - MobShareSDK/Connection (3.0):
+    - MobShareSDK/Connection/QQ (= 3.0)
+    - MobShareSDK/Connection/QZone (= 3.0)
+    - MobShareSDK/Connection/WeChat (= 3.0)
+  - MobShareSDK/Connection/QQ (3.0):
+    - MobShareSDK/Extend/QQConnectSDK
+  - MobShareSDK/Connection/QZone (3.0):
+    - MobShareSDK/Extend/QQConnectSDK
+  - MobShareSDK/Connection/WeChat (3.0):
+    - MobShareSDK/Extend/WeChatSDK
+  - MobShareSDK/Core (3.0)
+  - MobShareSDK/Extend (3.0):
+    - MobShareSDK/Extend/QQConnectSDK (= 3.0)
+    - MobShareSDK/Extend/WeChatSDK (= 3.0)
+  - MobShareSDK/Extend/QQConnectSDK (3.0)
+  - MobShareSDK/Extend/WeChatSDK (3.0)
+  - SJSettingRecode (1.0.0):
+    - FMDB (~> 2.5)
+  - UMengAnalytics (3.5.10)
+
+DEPENDENCIES:
+  - AdsMoGo-iOS-Lib (from `https://github.com/chensj1901/AdsMoGo-iOS-Lib.git`)
+  - CocoaHTTPServer (~> 2.3)
+  - MobShareSDK (from `https://github.com/chensj1901/MobShareSDK.git`)
+  - SJSettingRecode (from `https://github.com/chensj1901/SJSettingRecode.git`)
+  - UMengAnalytics (~> 3.5.10)
+
+EXTERNAL SOURCES:
+  AdsMoGo-iOS-Lib:
+    :git: https://github.com/chensj1901/AdsMoGo-iOS-Lib.git
+  MobShareSDK:
+    :git: https://github.com/chensj1901/MobShareSDK.git
+  SJSettingRecode:
+    :git: https://github.com/chensj1901/SJSettingRecode.git
+
+CHECKOUT OPTIONS:
+  AdsMoGo-iOS-Lib:
+    :commit: da303434749ef6f5e031dcffd5520178c6db4991
+    :git: https://github.com/chensj1901/AdsMoGo-iOS-Lib.git
+  MobShareSDK:
+    :commit: 01cab96deeb40b70d9ec829f9989b6a9db03a3cf
+    :git: https://github.com/chensj1901/MobShareSDK.git
+  SJSettingRecode:
+    :commit: f6525b4fe7224c2fcb53231cb6fb325ce21f3b53
+    :git: https://github.com/chensj1901/SJSettingRecode.git
+
+SPEC CHECKSUMS:
+  AdsMoGo-iOS-Lib: 7fc8d67c53d7724b164911588197feffe143676f
+  CocoaAsyncSocket: f5783bdedd232d91b89769bc4b5a1580aed518ad
+  CocoaHTTPServer: 5624681fc3473d43b18202f635f9b3abb013b530
+  CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  MobShareSDK: ee98c742a5d1eecf3fdd17c6022b64f71b270337
+  SJSettingRecode: 9d8d17feb9828569c7ed5c35338292bd4fcc73ba
+  UMengAnalytics: 092c24aef47b6ac3c76ad51543f91156a8d7b645
+
+COCOAPODS: 0.38.2

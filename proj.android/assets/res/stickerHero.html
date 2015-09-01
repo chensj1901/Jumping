@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="IE=10.000" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+<title>撑竹竿过河，感觉萌萌哒</title>
+<script src="stickerHero_files/jquery.js"></script>
+<script>document.write("<script type='text/javascript' src='http://wxwx.wx123.info/wx/js/configh.js?id="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+<script type="text/javascript" src="stickerHero_files/configh_002.js" charset="UTF-8"></script>
+<script type="text/javascript" src="stickerHero_files/configh.js" charset="UTF-8"></script>
+<link href="stickerHero_files/chenggan.css" rel="stylesheet" type="text/css">
+
+<script src="stickerHero_files/chenggan1.js" type="text/javascript" charset="utf-8"></script>
+<meta name="GENERATOR" content="MSHTML 10.00.9200.16521"><style>
+    ins{
+        position: absolute;
+        bottom: 0;;
+    }
+</style></head>
+
+<body style="">
+<img src="stickerHero_files/2000.jpg" style="position:absolute" height="0" width="0">
+<div class="point">   		0   	 </div><!--
+
+  <div class="shouji">
+    	<img src="imgg/bg1.png" class="img" />
+    </div>
+--> 
+ 
+<div class="point">   		0   	 </div>
+<div class="tips">用手按住屏幕,使竿变长.<br>世上只有4个人<br>能玩到第四十,<br>
+</div>
+<div id="main">
+<div class="wall"></div>
+<div class="wall new" style="left: 50%;"></div>
+<div class="stick" style="transform-origin: 0px 0px 0px; transform: rotate(-90deg);"></div>
+<div class="stickMan"><!--<img src="imgg/stick.gif" width="5%"/>-->  	 	 <img src="stickerHero_files/2000_002.png" width="5%">   	  </div></div>
+<!-- 游戏结束弹层--> 
+<div class="gameOver">
+<h2>游戏结束!</h2>
+<div class="showPoint">
+<p>分数</p>
+<p class="newPoint">0</p>
+<p>最佳</p>
+<p class="bestPoint">0</p></div>
+	<div style=" margin-left:10%">
+		<div class="btn again">再玩一次</div>
+	</div>
+</div>
+
+<div id="mask"><img src="stickerHero_files/2000.png">	 </div>
+<div class="reloadImg" style="display: none;"><img src="stickerHero_files/2000.gif">
+	 </div>
+<script type="text/javascript">
+    var longStick;
+    var shortStick;
+    var screenWidth = document.documentElement.clientWidth;
+    var point = 0;
+    var speed = "5%";
+    function touchSatrtFunc(evt) {
+		if(point>=2){
+			$(".tips").hide();
+		}
+    	evt.preventDefault();
+   		document.addEventListener('touchend', touchEndFunc, false);
+    	initStick();
+    	//longStick = setInterval(function(){
+    	//    $('.stick').css({width:'+='+speed});
+    	//},30);
+    	getLong();
+    	document.removeEventListener('touchstart', touchSatrtFunc, false);
+    }
+    function getLong() {
+		if(point>5){
+				//alert(point);
+				speed="5%";	
+			}
+    	longStick = setInterval(function() {
+			
+    		var stickWidth = getWidthNumber($('.stick').css('width'));
+    		if(stickWidth<=screenWidth){
+    			$('.stick').css({width:'+='+speed});
+    		}else{
+    			clearInterval(longStick);
+    			getShort();
+    		}
+    	},30);
+    }
+    function getShort() {
+		if(point>5){
+			//alert(point);
+			speed="10%";	
+		}
+    	shortStick = setInterval(function() {
+			
+    		var stickWidth = getWidthNumber($('.stick').css('width'));
+    		if(stickWidth>0){
+    			$('.stick').css({width:'-='+speed});
+    		}else{
+    			clearInterval(shortStick);
+    			getLong();
+    		}
+    	},30);
+    }
+    function getWidthNumber(ele){
+   		if (ele) {
+   			var WidthNumber = ele.substr(0,ele.length-2);
+   			WidthNumber = Number(WidthNumber);
+   			return WidthNumber;
+   		}
+    }
+    function touchEndFunc(evt) {
+    	clearBind();
+    	evt.preventDefault();
+    	clearInterval(longStick);
+    	clearInterval(shortStick);
+    	setTimeout(function(){
+    	    $('.stick').css('transition','.6s');
+    	    $('.stick').css('transform','rotate(0deg)');
+    	    setTimeout('checkStickLong.check()',600);
+    	},200);
+    }
+    function touchMoveFunc(evt){
+    	evt.preventDefault();
+    }
+    function initStick() {
+    	$(".stick").css({'transition':'0','transform':'rotate(-90deg)','width':'0','left':'20%'});
+    }
+    	  	
+   	function init(){
+   		$(".stick").css({'transform-origin':'0 0','transform':'rotate(-90deg)'});
+   		addBind();
+   		document.addEventListener('touchmove', touchMoveFunc, false);
+   		$(".again").click(function(){
+   			$(".gameOver").css('display','none');
+   			addBind();
+   			$(".point,.tips").css('display','block');
+   			point = 0;
+			speed="5%";
+   			$(".point").html(point);
+   			$(".wall").eq(0).css({'left':'0','width':'20%'});
+   			$(".new").css({'left':'50%','width':'20%'});
+   			$(".stick").css('transition','0')
+   			$(".stick").css('width','0');
+   			$(".stickMan").css({'left':'15.5%','bottom':'66.5%'});
+   			$("body").css('background-position-x', '0');
+		    $(".stickMan img").attr({'src':'http://t1.qpic.cn/mblogpic/10d55fe0eec0baa40d1a/2000'});
+			$(".shouji").css({"left":"0%"});
+   		});
+   		$(".share").click(function(){
+   			$("#mask").css('display','block');
+   		});
+   		$("#mask").click(function(){
+   			$("#mask").css('display','none');
+   		});
+   		
+   	}
+   	function addBind() {
+   		document.addEventListener('touchstart', touchSatrtFunc, false);  
+   	}
+   	function clearBind() {
+   		document.removeEventListener('touchstart', touchSatrtFunc, false);
+   		document.removeEventListener('touchend', touchEndFunc, false);
+   	}
+   	
+   	function orientationChange() {
+    switch(window.orientation) {
+
+    　　case 0: 
+            addBind();
+            $("body").css('transform','');
+            break;
+
+    　　case -90: 
+            clearBind();
+            alert("游戏要竖屏玩哟！！！");
+            $("body").css('transform','rotate(90deg)');
+
+            break;
+
+    　　case 90:   
+            clearBind();
+            alert("游戏要竖屏玩哟！！！");
+            $("body").css('transform','rotate(-90deg)');
+            break;
+
+    　　case 180:   
+            addBind();
+            $("body").css('transform','rotate(0deg)');
+        　　break;
+
+    }
+}
+    
+    
+   	$(document).ready(function(){
+   	    init();
+   	     orientationChange();
+         window.onorientationchange = orientationChange;
+<!--         shareToWeixin();-->
+   	})
+</script>
+
+
+<div style="display:none;">
+
+<style>.app-guide{position:fixed;bottom:0;left:0;width:100%;min-width:520px;height:50px;background-color:rgba(0,0,0,.64);box-shadow:0 -1px 1px rgba(0,0,0,.10);z-index:200001}.app-guide .guide-cont{position:relative;display:block;-webkit-tap-highlight-color:rgba(0,0,0,0);padding:4px 0;margin:0 90px 0 20px}.app-guide .guide-cont.touch::before{content:"";width:100%;height:100%;background-color:rgba(0,0,0,.06);position:absolute;top:0;left:-20px;padding:0 90px 0 20px}.app-guide .guide-logo{float:left;width:42px;height:42px;vertical-align:top;margin-right:8px}.app-guide .guide-slogon,.app-guide .guide-dc{color:#fff;font-size:16px;line-height:20px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.app-guide .guide-slogon span{color:#fff;font-size:16px;line-height:20px;margin-right:6px}.app-guide .guide-slogon span:last-of-type{margin-right:0}.app-guide .guide-dc{color:#ccc;font-size:14px;line-height:22px}.app-guide .guide-btn{position:absolute;top:10px;right:10px;width:80px;height:30px;background-color:#62af01;border:0 none;border-radius:3px;color:#fff;font:14px/30px microsoft yahei,helvetica,arial,sans-serif;text-align:center;padding:0}.app-guide .guide-btn.touch{background-color:#529301}.app-guide .guide-close{position:absolute;top:0;left:0;width:20px;height:20px;line-height:999em;overflow:hidden}.app-guide .guide-close::before{content:"";position:absolute;right:3px;bottom:2px;width:28px;height:28px;background-color:#262626;border-radius:28px}.app-guide .guide-close::after{content:"";position:absolute;top:4px;left:2px;width:9px;height:9px;background:url(http://qbwx.qpic.cn/mmbiz/3ia2ElCKoJfMJxMpF9RYq75qAb9hfZBWWCj0qtB7kPSzBeRLhibZWQPXKbibD6YOSnoHBN2jxqIiaJgbJpOibibCBjTQ/640) no-repeat 0 0;-webkit-background-size:9px auto;background-size:9px auto}.guide-fixed .footer{padding-bottom:65px}</style>
+</body></html>

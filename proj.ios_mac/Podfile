@@ -1,0 +1,6 @@
+platform :ios, '6.0'
+pod 'UMengAnalytics', '~> 3.5.10'
+pod 'AdsMoGo-iOS-Lib',:git=>'https://github.com/chensj1901/AdsMoGo-iOS-Lib.git'
+pod 'MobShareSDK',:git=>'https://github.com/chensj1901/MobShareSDK.git'
+pod 'CocoaHTTPServer', '~> 2.3'
+pod 'SJSettingRecode',:git=>'https://github.com/chensj1901/SJSettingRecode.git'
